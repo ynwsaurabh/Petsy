@@ -126,7 +126,7 @@ function checkAuthAndRedirect() {
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         Toast.error("Please Login First")
-        window.location.href = './Login.html';
+        window.location.href = './index.html';
       }
     });
   }

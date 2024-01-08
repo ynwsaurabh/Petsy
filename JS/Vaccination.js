@@ -306,7 +306,7 @@ onAuthStateChanged(auth, (user) => {
 function checkAuthAndRedirect() {
     onAuthStateChanged(auth, (user) => {
         if (!user) {
-            window.location.href = './verify/Login.html';
+            window.location.href = './verify/index.html';
         }
     });
 }

@@ -13,7 +13,7 @@ logoutButtons.forEach((logout) => {
     signOut(auth)
       .then(() => {
         console.log("User signed out successfully");
-        window.location.href = '../verify/Login.html';
+        window.location.href = '../verify/index.html';
       })
       .catch((error) => {
         console.error("Error signing out:", error);
