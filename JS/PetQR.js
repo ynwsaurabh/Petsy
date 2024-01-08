@@ -232,7 +232,7 @@ submitBtn.addEventListener('click', (e) => {
 function checkAuthAndRedirect() {
     onAuthStateChanged(auth, (user) => {
         if (!user) {
-            window.location.href = './verify/index.html';
+            window.location.href = './index.html';
         }
     });
 }
