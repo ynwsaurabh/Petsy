@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./Images/Logo.jpg">
+    <title>Petsy - Your Pet's Best Friend: Create Pet IDs, Plan Playdates, and Ensure Safety</title>
+    <link rel="stylesheet" href="./CSS/FriendsCard.css">
+    <link rel="stylesheet" href="./CSS/Footer.css">
+    <link rel="stylesheet" href="./CSS/Navbar.css">
+    <link rel="stylesheet" href="./CSS/Notification.css">
+    <link href="//cdn.syncfusion.com/ej2/bootstrap5.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="root">
+        <!--Navbar-->
+        <div class="navbar">
+            <div class="navbarLinks">
+                <div class="Hamburger" >
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <a class="logo" href="/Profile.html">
+                    <img src="./Images/Logo.jpg" alt="Websitelogo"
+                        loading="lazy">
+                    <h4>Petsy</h4>
+                </a>
+                <div class="navbarLinksMenu">
+                    <a class="navbarLinkProfile" href="./Profile.html">
+                        <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" class="reactIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5C14.2091 5 16 6.79086 16 9ZM14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.89543 10.8954 7 12 7C13.1046 7 14 7.89543 14 9Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM3 12C3 14.0902 3.71255 16.014 4.90798 17.5417C6.55245 15.3889 9.14627 14 12.0645 14C14.9448 14 17.5092 15.3531 19.1565 17.4583C20.313 15.9443 21 14.0524 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12ZM12 21C9.84977 21 7.87565 20.2459 6.32767 18.9878C7.59352 17.1812 9.69106 16 12.0645 16C14.4084 16 16.4833 17.1521 17.7538 18.9209C16.1939 20.2191 14.1881 21 12 21Z" fill="currentColor"></path>
+                        </svg>
+                        &nbsp;Profile
+                    </a>
+                    <a href="./Friends.html"
+                        class="navbarLinksNavigate">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="reactIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M892 772h-80v-80c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v80h-80c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h80v80c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-80h80c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM373.5 498.4c-.9-8.7-1.4-17.5-1.4-26.4 0-15.9 1.5-31.4 4.3-46.5.7-3.6-1.2-7.3-4.5-8.8-13.6-6.1-26.1-14.5-36.9-25.1a127.54 127.54 0 0 1-38.7-95.4c.9-32.1 13.8-62.6 36.3-85.6 24.7-25.3 57.9-39.1 93.2-38.7 31.9.3 62.7 12.6 86 34.4 7.9 7.4 14.7 15.6 20.4 24.4 2 3.1 5.9 4.4 9.3 3.2 17.6-6.1 36.2-10.4 55.3-12.4 5.6-.6 8.8-6.6 6.3-11.6-32.5-64.3-98.9-108.7-175.7-109.9-110.8-1.7-203.2 89.2-203.2 200 0 62.8 28.9 118.8 74.2 155.5-31.8 14.7-61.1 35-86.5 60.4-54.8 54.7-85.8 126.9-87.8 204a8 8 0 0 0 8 8.2h56.1c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5 29.4-29.4 65.4-49.8 104.7-59.7 3.8-1.1 6.4-4.8 5.9-8.8zM824 472c0-109.4-87.9-198.3-196.9-200C516.3 270.3 424 361.2 424 472c0 62.8 29 118.8 74.2 155.5a300.95 300.95 0 0 0-86.4 60.4C357 742.6 326 814.8 324 891.8a8 8 0 0 0 8 8.2h56c4.3 0 7.9-3.4 8-7.7 1.9-58 25.4-112.3 66.7-153.5C505.8 695.7 563 672 624 672c110.4 0 200-89.5 200-200zm-109.5 90.5C690.3 586.7 658.2 600 624 600s-66.3-13.3-90.5-37.5a127.26 127.26 0 0 1-37.5-91.8c.3-32.8 13.4-64.5 36.3-88 24-24.6 56.1-38.3 90.4-38.7 33.9-.3 66.8 12.9 91 36.6 24.8 24.3 38.4 56.8 38.4 91.4-.1 34.2-13.4 66.3-37.6 90.5z"></path>
+                        </svg>
+                        &nbsp; Friends
+                        </a>
+                    <a href="./Explore.html">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="reactIcon" id="explore" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M1025.02 512c0-272.016-213.663-495.104-482.319-511.023-5.536-.608-11.088-1.009-16.72-1.009-1.664 0-3.328.176-4.992.224-2.992-.048-5.968-.224-8.992-.224C229.117-.032-1.026 229.664-1.026 512s230.144 512.032 513.023 512.032c3.024 0 6-.176 9.008-.24 1.664.064 3.328.24 4.992.24 5.632 0 11.184-.4 16.72-1.009 268.64-15.92 482.304-238.976 482.303-511.023zm-95.451 164.832c-17.632-5.12-61.92-16.24-140.064-25.392 6.464-44.192 10-90.896 10-139.44 0-38.256-2.208-75.343-6.288-111.008 99.008-11.824 142.384-26.72 145.296-27.745l-11.92-33.584c22.24 53.088 34.56 111.296 34.56 172.336 0 58.193-11.28 113.761-31.583 164.833zM285.488 512.001c0-35.808 2.37-70.77 6.705-104.401 51.888 4.08 113.936 7.088 186.863 7.792v222.064c-70.992.688-131.664 3.568-182.688 7.473-7.04-42.193-10.88-86.88-10.88-132.928zM542.945 68.223c78.464 22.736 145.648 131.695 175.744 276.111-48.368 3.856-106.624 6.673-175.744 7.33V68.223zm-63.886.783V351.63c-68.368-.688-126.88-3.473-176.063-7.232C333.7 201.79 401.428 93.646 479.059 69.006zm0 632.223l.001 253.743c-72.4-22.976-136.192-118.575-169.36-247.023 47.76-3.504 104.096-6.063 169.359-6.72zm63.888 254.543l-.001-254.56c65.952.623 122.064 3.28 169.217 6.928-32.608 130.128-96 226.416-169.216 247.632zm-.001-318.32l.001-222.032c73.311-.688 134.991-3.776 186.191-8a844.922 844.922 0 0 1 6.496 104.592c0 46.128-3.712 90.864-10.528 133.12-50.416-4.08-110.8-7.008-182.16-7.68zm371.858-323.52c-9.664 3.008-50.063 14.48-131.023 24.032-18.048-95.952-50.672-177.968-93.12-237.168C788.197 143.18 867.797 219.1 914.805 313.932zM358.82 90.589c-52.208 59.952-94.832 146.161-118.096 248.113-72.48-7.856-115.921-17.089-133.312-21.281 50.72-104.64 141.04-186.752 251.408-226.832zM83.637 377.182c12.32 3.344 58.913 14.941 145.553 24.525a795.86 795.86 0 0 0-7.68 110.305c0 48.273 4.368 94.721 12.24 138.688-74.4 8.033-120.16 17.649-140.688 22.609-19.44-50.096-30.208-104.447-30.208-161.312 0-46.96 7.312-92.256 20.783-134.815zm37.457 355.166c23.264-4.944 64.912-12.464 126.592-18.928 24.288 89.712 63.792 165.616 111.136 219.968-101.12-36.72-185.296-108.752-237.728-201.04zM690.662 923.18c38.224-53.264 68.48-125.024 87.296-208.801 63.408 7.28 103.216 15.792 123.296 20.864-48.016 83.072-121.855 149.393-210.592 187.937z"></path>
+                        </svg>
+                        &nbsp;Explore
+                    </a>
+                    <a href="./Vaccination.html">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="reactIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M17 3l4 4"></path><path d="M19 5l-4.5 4.5"></path><path d="M11.5 6.5l6 6"></path><path d="M16.5 11.5l-6.5 6.5h-4v-4l6.5 -6.5"></path><path d="M7.5 12.5l1.5 1.5"></path><path d="M10.5 9.5l1.5 1.5"></path><path d="M3 21l3 -3"></path>
+                        </svg>
+                        &nbsp;Vaccination
+                    </a>
+                    <a href="./PetQR.html">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="reactIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0v-3Zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5ZM.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5Zm15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5ZM4 4h1v1H4V4Z"></path><path d="M7 2H2v5h5V2ZM3 3h3v3H3V3Zm2 8H4v1h1v-1Z"></path><path d="M7 9H2v5h5V9Zm-4 1h3v3H3v-3Zm8-6h1v1h-1V4Z"></path><path d="M9 2h5v5H9V2Zm1 1v3h3V3h-3ZM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8H8Zm2 2H9V9h1v1Zm4 2h-1v1h-2v1h3v-2Zm-4 2v-1H8v1h2Z"></path><path d="M12 9h2V8h-2v1Z"></path>
+                        </svg>
+                        &nbsp;Pet QR 
+                    </a>
+                    <a class="navbarLinkContact" href="./verify/Contact.html">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="reactIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        &nbsp;Contact
+                    </a>
+                    <a class="navbarLinkContact" id="logout" >
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path><path d="M9 12h12l-3 -3"></path><path d="M18 15l3 -3"></path>
+                        </svg>
+                        &nbsp;Logout
+                    </a>
+                </div>
+            </div>
+            <div class="navbarSecondaryInfo">
+                <div class="navbarNotificationSection" id="handleDropDown">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="notificationIcon active" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M255.9 456c31.1 0 48.1-22 48.1-53h-96.3c0 31 17 53 48.2 53zM412 352.2c-15.4-20.3-45.7-32.2-45.7-123.1 0-93.3-41.2-130.8-79.6-139.8-3.6-.9-6.2-2.1-6.2-5.9v-2.9c0-13.4-11-24.7-24.4-24.6-13.4-.2-24.4 11.2-24.4 24.6v2.9c0 3.7-2.6 5-6.2 5.9-38.5 9.1-79.6 46.5-79.6 139.8 0 90.9-30.3 102.7-45.7 123.1-9.9 13.1-.5 31.8 15.9 31.8h280.1c16.3 0 25.7-18.8 15.8-31.8z"></path>
+                    </svg>
+                    <div class="notificationContainer inactive">
+                        <div class="dropDownContainer">
+                            <h2>Notifications</h2>
+                            <div class="noNewNotification">
+                                <img src="./Images/recent_Notification.png">
+                                <h3>You have no new notifications yet.</h3>
+                                <p>When you get notifications, they'll show up here</p>
+                            </div>
+                        </div><div class="allNotifications">
+                            <a class="links-color" href="./Friends.html">Show all notifications
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="allNotificationsIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="./Profile.html" class="navbarDogInfo">
+                    <div class="navProfilePictureContainer" id="navProfile">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" class="navProfileDogIcon " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M239.71,125l-16.42-88a16,16,0,0,0-19.61-12.58l-.31.09L150.85,40h-45.7L52.63,24.56l-.31-.09A16,16,0,0,0,32.71,37.05L16.29,125a15.77,15.77,0,0,0,9.12,17.52A16.26,16.26,0,0,0,32.12,144,15.48,15.48,0,0,0,40,141.84V184a40,40,0,0,0,40,40h96a40,40,0,0,0,40-40V141.85a15.5,15.5,0,0,0,7.87,2.16,16.31,16.31,0,0,0,6.72-1.47A15.77,15.77,0,0,0,239.71,125ZM176,208H136V195.31l13.66-13.65a8,8,0,0,0-11.32-11.32L128,180.69l-10.34-10.35a8,8,0,0,0-11.32,11.32L120,195.31V208H80a24,24,0,0,1-24-24V123.11L107.93,56h40.14L200,123.11V184A24,24,0,0,1,176,208Zm-72-68a12,12,0,1,1-12-12A12,12,0,0,1,104,140Zm72,0a12,12,0,1,1-12-12A12,12,0,0,1,176,140Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <!-- append name dynamically in h2 tag  -->
+                    <h2 id="navName"></h2>
+                </a>
+            </div>
+        </div>
+
+        <!--Content-->
+        <div class="friendsWrapper">
+            <h1>My Friends</h1>
+            <div class="friendsCardContainer">
+                <p id="noFriends"><br>No friends to show.</p>
+            </div>
+        </div>
+
+        <template data-FriendTemplate>
+            <div class="friendCardWrapper">
+                <div class="friendsInfoContainer">
+                    <div class="friendsProfilePictureContainer" data-Profile>
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" class="friendsProfileIcon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M239.71,125l-16.42-88a16,16,0,0,0-19.61-12.58l-.31.09L150.85,40h-45.7L52.63,24.56l-.31-.09A16,16,0,0,0,32.71,37.05L16.29,125a15.77,15.77,0,0,0,9.12,17.52A16.26,16.26,0,0,0,32.12,144,15.48,15.48,0,0,0,40,141.84V184a40,40,0,0,0,40,40h96a40,40,0,0,0,40-40V141.85a15.5,15.5,0,0,0,7.87,2.16,16.31,16.31,0,0,0,6.72-1.47A15.77,15.77,0,0,0,239.71,125ZM176,208H136V195.31l13.66-13.65a8,8,0,0,0-11.32-11.32L128,180.69l-10.34-10.35a8,8,0,0,0-11.32,11.32L120,195.31V208H80a24,24,0,0,1-24-24V123.11L107.93,56h40.14L200,123.11V184A24,24,0,0,1,176,208Zm-72-68a12,12,0,1,1-12-12A12,12,0,0,1,104,140Zm72,0a12,12,0,1,1-12-12A12,12,0,0,1,176,140Z"></path>
+                        </svg>
+                    </div>
+                    <div class="friendsInfo">
+                        <h3 data-Name></h3>
+                        <p data-Bio></p>
+                    </div>
+                </div>
+                <button data-Remove>Remove</button>
+            </div>
+        </template>
+
+
+        <!--Footer-->
+        <div><div class="footer-container">
+                    <div><img class="footer-img"
+                            src="../Images/FooterTop.png"
+                            alt="Footer">
+                    </div>
+                    <div class="footer">
+                        <div class="about-petsy">
+                            <h3 class="footer-heading">About Petsy</h3>
+                            <p>Petsy is a platform where pet
+                                owners can effortlessly arrange playdates for
+                                their furry friends, share pet-care insights,
+                                and forge lasting connections. Petsy isn't
+                                just a social space; it's a vibrant community
+                                where pets take center stage. 🐾 <br>But we're
+                                more than just a platform; we're an open-source
+                                project. This means our community shapes
+                                Petsy, ensuring it evolves with your needs. At
+                                Petsy, every wag, chirp, or meow deserves to
+                                find its kindred spirit.
+                            </p>
+                        </div>
+                        <div class="support-petsy">
+                            <h3 class="footer-heading">Support</h3>
+                            <div class="supportLogin">
+                                <div>
+                                    <a class="support-links"
+                                        href="./Vaccination.html">Vaccination</a>
+                                    <a class="support-links"
+                                        href="./PetQR.html">My QR code</a>
+                                    <a class="support-links"
+                                        href="./Friends.html">Friends</a>
+                                </div>
+                                <div>
+                                    <a class="support-links"
+                                        href="/verify/Contact.html">Contact
+                                        Us</a>
+                                </div>
+                                <div>
+                                    <a class="support-links"
+                                        href="./Explore.html">Explore</a>
+                                    <div class="support-links"
+                                        id="logout">Logout</div>
+                                </div>
+                            </div>
+                            <div class="footerSocialLinksContainer">
+                                <a class="footerSocialLinks"
+                                    href="https://github.com/ynwsaurabh/Petsy">
+                                    <svg
+                                        stroke="currentColor"
+                                        fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 1024 1024" height="1em"
+                                        width="1em"
+                                        xmlns="http://www.w3.org/2000/svg"><path
+                                            d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright-bar">Copyright © 2023 - Petsy - All rights reserved
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="Toast"></div>
+    <script defer type="module" src="./JS/Footer.js" ></script>
+    <script defer type="module" src="./JS/Navbar.js" ></script>
+    <script type="module" src="./JS/Notification.js" ></script>
+    <script type="module" src="./JS/Friends.js" ></script>
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2-notifications.min.js"></script>
+</body>
+</html>
