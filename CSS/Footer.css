@@ -1,12 +1,13 @@
 /* Footer */
-
+body{ 
+  margin-left: -1px;
+  margin-right: -1px;
+  margin-bottom: 1px;
+}
 .footer-container{
-    margin-left: -8px;
-    margin-right: -12px;
     color: #f6f1e9;
     background-color: #3C2A21;
     margin-top: 70px;
-    margin-bottom: -10px;
   }
   .footer{
     display: flex;
