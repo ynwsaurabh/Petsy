@@ -10,7 +10,7 @@ body {
 
 /* For Webkit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -19,7 +19,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #ff0000; /* or any color you prefer */
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .nav {
@@ -145,54 +145,6 @@ body {
   color: #3c2a21;
   box-shadow: 2px 4px #3c2a21;
 }
-
-@media (max-width: 1100px) {
-  .landingImg {
-    display: none;
-  }
-
-  .loginInfo {
-    width: max(40%, 300px);
-    margin: auto;
-  }
-
-  .btn {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .loginInfo form {
-    margin-top: 10px;
-    font-size: 15px;
-  }
-  .loginInfo h1 {
-    font-size: 40px;
-    margin: 0;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 450px) {
-  .loginInfo h1 {
-    font-size: 30px;
-  }
-  .loginInfo input {
-    padding: 12px 10px;
-    font-size: 14px;
-  }
-
-  .secondary-login span {
-    font-size: 12px;
-  }
-  .not-register {
-    font-size: 13px;
-  }
-
-  svg.revealpwd {
-    margin-right: 6px;
-  }
-}
-
 
 /* secreg starts here */
 
@@ -346,6 +298,33 @@ body {
   color: black;
 }
 
+@media (max-width: 1100px) {
+  .landingImg {
+    display: none;
+  }
+
+  .loginInfo {
+    width: max(40%, 300px);
+    margin: auto;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .loginInfo form {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .loginInfo h1 {
+    font-size: 40px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
 /* 
 .visibility {
   position: relative;
@@ -380,6 +359,19 @@ body {
 } */
 
 @media (max-width: 750px) {
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* or any color you prefer */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent; /* or any color you prefer */
+    border-radius: 5px;
+  }
+
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
   .secondaryRegisterContainer {
     width: 60%;
     min-width: 300px;
@@ -446,6 +438,27 @@ body {
   .dropdown-container {
     width: 86%;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .loginInfo h1 {
+    font-size: 30px;
+  }
+  .loginInfo input {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .secondary-login span {
+    font-size: 12px;
+  }
+  .not-register {
+    font-size: 13px;
+  }
+
+  svg.revealpwd {
+    margin-right: 6px;
   }
 }
 

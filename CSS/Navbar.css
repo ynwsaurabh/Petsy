@@ -261,6 +261,19 @@ body {
 }
 
 @media(max-width:600px) {
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* or any color you prefer */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent; /* or any color you prefer */
+    border-radius: 5px;
+  }
+
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
   .bar {
     width: 20px;
   }
