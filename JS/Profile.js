@@ -33,7 +33,7 @@ onAuthStateChanged(auth, (user) => {
                 Breed.textContent = 'Breed: ' + existingData.Breed;
                 Bio.textContent = 'Bio: ' + existingData.Bio;
                 Gender.textContent = 'Gender: ' + existingData.Gender;
-                Age.textContent = 'DOB: ' + existingData.DOB;
+                Age.textContent = 'Age: ' + existingData.DOB;
                 Address.textContent = 'Address: ' + existingData.Address;
                 const image = existingData.profileImg;
                 

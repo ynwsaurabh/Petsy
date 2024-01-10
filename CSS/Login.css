@@ -189,7 +189,7 @@ body {
 }
 
 .styledSelect{
-  width: 86%;
+  width: 100%;
   margin: 20px 0px;
   text-align: left;
   padding: 10px;
@@ -376,6 +376,7 @@ body {
     width: 60%;
     min-width: 300px;
     padding: 30px 0;
+    margin-top: 90px;
   }
 
   .secondaryRegisterationInputs {
