@@ -5,6 +5,18 @@ import * as Toast from './Toast.js';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Check User Signed in
+
+function checkAuthAndRedirect() {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.location.href = '../Profile.html';
+    }
+  });
+}
+
+checkAuthAndRedirect();
+
 const submitBtn = document.querySelector("#submit");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
@@ -44,15 +56,3 @@ submitBtn.addEventListener('click', (e) => {
 forgot.addEventListener('click', () =>{
   window.location.href= '../verify/forgotPassword.html'
 })
-
-// Check User Signed in
-
-function checkAuthAndRedirect() {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      window.location.href = '../Profile.html';
-    }
-  });
-}
-
-checkAuthAndRedirect();

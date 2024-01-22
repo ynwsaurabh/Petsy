@@ -8,7 +8,16 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 const storagedb = getStorage(app)
+// Check User Signed in
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = './index.html';
+        }
+    });
+}
 
+checkAuthAndRedirect();
 function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
@@ -127,15 +136,3 @@ profileButton.addEventListener('click', () => {
             profileButton.textContent = 'Connect +'
         }
     });
-
-
-// Check User Signed in
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            window.location.href = './index.html';
-        }
-    });
-}
-
-checkAuthAndRedirect();

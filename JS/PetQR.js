@@ -9,6 +9,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 const storagedb = getStorage(app)
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = './index.html';
+        }
+    });
+}
+
+checkAuthAndRedirect();
 const copy = document.getElementById('copy');
 const whatsapp = document.getElementById('whatsapp');
 const twitter = document.getElementById('twitter');
@@ -83,6 +92,14 @@ checkbox.addEventListener('change', () => {
         msgByOwner.style.display = 'block';
         contactInfo.style.display = 'flex';
         localStorage.setItem('checkboxState', 'checked');
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            }
+            const checkRef = ref(db, 'UserAuthList/' + user.uid +'/lostPet' )
+            set(checkRef, {
+                lost: 'checked'
+            })
+        });
     }
     else {
         messageTitle.style.color = 'black';
@@ -92,6 +109,14 @@ checkbox.addEventListener('change', () => {
         msgByOwner.style.display = 'none';
         contactInfo.style.display = 'none';
         localStorage.setItem('checkboxState', 'unchecked');
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            }
+            const checkRef = ref(db, 'UserAuthList/' + user.uid +'/lostPet' )
+            set(checkRef, {
+                lost: 'unchecked'
+            })
+        });
     }
 
 })
@@ -228,13 +253,3 @@ submitBtn.addEventListener('click', (e) => {
             });
     }
 })
-
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            window.location.href = './index.html';
-        }
-    });
-}
-
-checkAuthAndRedirect();

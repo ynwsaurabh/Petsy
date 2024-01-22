@@ -81,6 +81,28 @@ get(userRef)
 
         }
     })
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+        }
+        const checkRef = ref(db, 'UserAuthList/' + user.uid +'/lostPet' )
+        get(checkRef).then((snapshot) =>{
+            const data = snapshot.val();
+            const savedCheckboxState = data.lost;
+            if (savedCheckboxState === 'checked') {
+                connectBtn.style.display = 'none';
+                status.style.display = 'initial';
+                msgByOwner.style.display = 'block';
+                Bio.style.display = 'none';
+                contactInfo.style.display = 'flex';
+            } else {
+                connectBtn.style.display = 'initial';
+                status.style.display = 'none';
+                msgByOwner.style.display = 'none';
+                Bio.style.display = 'initial';
+                contactInfo.style.display = 'none';
+            }
+        })
+    });
 
     const savedCheckboxState = localStorage.getItem('checkboxState');
     console.log(savedCheckboxState);

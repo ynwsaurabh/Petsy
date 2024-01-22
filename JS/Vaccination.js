@@ -7,7 +7,17 @@ import * as Toast from "./Toast.js"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
+// Check User Signed in
 
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = './index.html';
+        }
+    });
+}
+
+checkAuthAndRedirect();
 const copy =document.getElementById('copy');
 const whatsapp =document.getElementById('whatsapp');
 const pdfBtn =document.getElementById('pdf');
@@ -300,15 +310,3 @@ onAuthStateChanged(auth, (user) => {
 
     }
 });
-
-// Check User Signed in
-
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            window.location.href = './index.html';
-        }
-    });
-}
-
-checkAuthAndRedirect();

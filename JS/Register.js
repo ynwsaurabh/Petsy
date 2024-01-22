@@ -50,15 +50,3 @@ submitBtn.addEventListener('click', (e) => {
         });
     }
 })
-
-// Check User Signed in
-
-// function checkAuthAndRedirect() {
-//     onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         window.location.href = '../Profile.html';
-//       }
-//     });
-//   }
-  
-//   checkAuthAndRedirect();

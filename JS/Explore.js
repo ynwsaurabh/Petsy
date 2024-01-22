@@ -7,6 +7,15 @@ import { firebaseConfig } from "./Config.js";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = './index.html';
+        }
+    });
+}
+
+checkAuthAndRedirect();
 
 const cardTemplate = document.querySelector("[data-cardTemplate]");
 const cardContainer = document.querySelector("[data-cardContainer]");
@@ -161,16 +170,3 @@ const insertSkeletonCards = () => {
         container.appendChild(skeletonCard);
     }
 }
-
-// document.addEventListener('DOMContentLoaded', insertSkeletonCards)
-// Check User Signed in
-
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            window.location.href = './index.html';
-        }
-    });
-}
-
-checkAuthAndRedirect();

@@ -9,7 +9,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 const storagedb = getStorage(app)
+// Check User Signed in
 
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        Toast.error("Please Login First")
+        window.location.href = './index.html';
+      }
+    });
+  }
+  
+  checkAuthAndRedirect();
 const submitBtn = document.querySelector("#submit");
 const petNameInp = document.getElementById('petName');
 const inputImage = document.getElementById('inputImage');
@@ -119,16 +130,3 @@ submitBtn.addEventListener('click', (e) => {
     );
     }
 });
-
-// Check User Signed in
-
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        Toast.error("Please Login First")
-        window.location.href = './index.html';
-      }
-    });
-  }
-  
-  checkAuthAndRedirect();

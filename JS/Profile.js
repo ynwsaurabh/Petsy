@@ -9,6 +9,18 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 const storagedb = getStorage(app)
 
+// Check User Signed in
+
+function checkAuthAndRedirect() {
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            window.location.href = './index.html';
+        }
+    });
+}
+
+checkAuthAndRedirect();
+
 const Name = document.querySelector(".name");
 const Breed = document.querySelector(".breed");
 const Bio = document.querySelector(".bio");
@@ -46,15 +58,3 @@ onAuthStateChanged(auth, (user) => {
 
     }
 });
-
-// Check User Signed in
-
-function checkAuthAndRedirect() {
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            window.location.href = './index.html';
-        }
-    });
-}
-
-checkAuthAndRedirect();
