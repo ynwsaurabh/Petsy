@@ -1,4 +1,4 @@
-import { firebaseConfig} from "./Config.js";
+import { firebaseConfig } from "./Config.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getDatabase, set, update, get, ref } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 import { getStorage, ref as storageRef, getDownloadURL, uploadBytes } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
@@ -103,29 +103,30 @@ saveBtn.addEventListener('click', async (e) => {
             const existingData = snapshot.val() || {};
             try {
                 // If a new profile image is uploaded
-                if (profileImage) {
+                if (inputUpImage.files[0]) {
                     const imagesRef = storageRef(storagedb, 'profile_images/' + user.uid + '/profileImg');
                     uploadBytes(imagesRef, profileImage);
-                    const downloadURL =  getDownloadURL(imagesRef);
+                    getDownloadURL(imagesRef).then((downloadURL) => {
 
-                    // Update all fields, including the profile image
-                     set(userRef, {
-                        ...existingData,
-                        profileImg: downloadURL,
-                        Uid: user.uid,
-                        Name: petName,
-                        DOB: petDOB,
-                        Breed: petBreed,
-                        Gender: gender,
-                        Bio: petBio || "",
-                        Address: Address || ""
+                        // Update all fields, including the profile image
+                        set(userRef, {
+                            ...existingData,
+                            profileImg: downloadURL,
+                            Uid: user.uid,
+                            Name: petName,
+                            DOB: petDOB,
+                            Breed: petBreed,
+                            Gender: gender,
+                            Bio: petBio || "",
+                            Address: Address || ""
+                        })
                     })
-                        .then(() => {
-                            window.location.href = './Profile.html'
-                        });
+                    .then(() => {
+                        window.location.href = './Profile.html'
+                    });
                 } else {
                     // If no new profile image, update other fields
-                     update(userRef, {
+                    update(userRef, {
                         ...existingData,
                         Name: petName,
                         DOB: petDOB,
@@ -138,7 +139,7 @@ saveBtn.addEventListener('click', async (e) => {
                             window.location.href = './Profile.html'
                         });
                 }
-
+                Toast.success('Data updated successfully')
                 console.log('Data stored/updated successfully');
                 editProfileWrapper.style.display = 'none';
             } catch (error) {
